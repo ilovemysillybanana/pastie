@@ -4,9 +4,7 @@
   <title>rpaste</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "https://js.stripe.com/v2/" %>
   <%= csrf_meta_tags %>
-  <%= tag :meta, :name => "stripe-key", :content => ENV["STRIPE_PUBLIC_KEY"] %>
 </head>
 
 <body>
@@ -20,7 +18,6 @@
       </div>
       <% end %>
     <% end %>
-
 
 <%= yield %>
 
