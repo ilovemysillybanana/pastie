@@ -1,0 +1,24 @@
+<div class="text-center">
+  <h1>Contact Us</h1>
+</div>
+
+<%= form_tag({controller: "contact", action: "contactus"}, method: "post", class: "form-group") do%>
+<div class="form-group">
+  <%= label_tag(:name, "Name: ")%>
+  <%= text_field_tag(:name,'', :placeholder => 'John Smith' ,class: "form-control")%>
+  <br>
+  <%= label_tag(:email, "Email: ")%>
+  <%= text_field_tag(:email,'', :placeholder => 'johnsmith@example.com', class: "form-control")%>
+  <br>
+  <%= label_tag(:subject, "Subject: ")%>
+  <%= text_field_tag(:subject,'', :placeholder => 'Advertisement Opportunity', class: "form-control")%>
+  <br>
+  <%= label_tag(:phone, "Phone: ")%>
+  <%= text_field_tag(:phone,'', :placeholder => '15554443333', class: "form-control")%>
+  <br>
+  <%= label_tag(:content, "Message: ")%>
+  <%= text_area_tag(:content,'', :placeholder => 'I would like to talk to you please give me a call.', class: "form-control")%>
+  <br>
+  <%= submit_tag("Submit", class: "btn btn-primary")%>
+</div>
+<% end %>
