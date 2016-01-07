@@ -6,6 +6,8 @@ To be a fully functional ruby on rails free alternative to pastebin.com.
 
 # Goals
 * Create accounts
+* Syntax highlighting
+* Post DB
 * Private posts
 * Monthly donation implementation
 * A nicer UI/UX
