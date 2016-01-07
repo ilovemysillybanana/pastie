@@ -9,7 +9,7 @@ class Contact < ActiveRecord::Base
     :format => { :with => /\A[^@]+@([^@\.]+\.)+[^@\.]+\z/ , :message => 'Not a valid email'}
 
   validates :phone, allow_nil: true,
-          length: { :minimum => 7, :maximum => 12, :message => 'Please double check phone number, include country and area code if necessary'}
+          length: { :minimum => 0, :maximum => 12, :message => 'Please double check phone number, include country and area code if necessary'}
 
   validates :subject, :presence => true,
     :length => { :minimum => 5, :maximum => 150, :message => 'should be between 5 and 150 characters'}
