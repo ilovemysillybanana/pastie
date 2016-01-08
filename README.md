@@ -6,11 +6,13 @@ To be a fully functional ruby on rails free alternative to pastebin.com.
 
 # Goals
 * Create accounts
+* Private posts
+* A nicer UI/UX
+* Commenting System
+
+#Complete
 * Syntax highlighting
 * Post DB
-* Private posts
-* Monthly donation implementation
-* A nicer UI/UX
 
 # How can I help?
 * Issues should be reported

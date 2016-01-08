@@ -11,11 +11,12 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
+//= require jquery_ujs
 //= require bootstrap-sprockets
 //= require highlight.pack
-//= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+
 
 $(document).ready(function() {
   $('pre code').each(function(i, block) {
