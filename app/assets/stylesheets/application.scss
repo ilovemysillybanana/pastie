@@ -1,2 +1,28 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+pre {
+  overflow: auto;
+  width: 1080px;
+  white-space: pre-wrap;                 /* CSS3 browsers  */
+	white-space: -moz-pre-wrap !important; /* 1999+ Mozilla  */
+	white-space: -pre-wrap;                /* Opera 4 thru 6 */
+	white-space: -o-pre-wrap;              /* Opera 7 and up */
+	word-wrap: break-word;                 /* IE 5.5+ and up */
+	/* overflow-x: auto; */                /* Firefox 2 only */
+	/* width: 99%; */		       /* only if needed */
+}
+
+/* no vertical scrollbars for IE 7 */
+*:first-child+html pre {
+	padding-bottom: 20px;
+	overflow-y: hidden;
+	overflow: visible;
+	overflow-x: auto;
+	}
+/* no vertical scrollbars for IE 6 */
+* html pre {
+	padding-bottom: 20px;
+	overflow: visible;
+	overflow-x: auto;
+	}

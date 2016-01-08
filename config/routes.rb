@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  root :to => "pages#index"
+  resources :listings
+  root :to => "listings#index"
 
   get 'pages/about'
   get 'contact/contactus'

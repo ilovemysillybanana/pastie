@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @listing.name %>
+</p>
+
+<p>
+  <strong>Language:</strong>
+  <%= @listing.language %>
+</p>
+</br>
+
+<pre><code><%= @listing.code %></code></pre>
+
+
+<%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-link" %> |
+<%= link_to 'Back', listings_path, class: "btn btn-link" %>
