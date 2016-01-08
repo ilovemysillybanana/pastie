@@ -10,9 +10,10 @@
 <body>
   <%= render 'layouts/header'%>
   <div class="container-fluid">
+    <!--
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    
+  -->
     <% flash.each do |name, msg| %>
       <% if msg.is_a?(String) %>
       <div class="alert alert-<%= name == :notice ? " success " : "danger " %> alert-dismissable">
