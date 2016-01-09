@@ -20,6 +20,10 @@ class ListingsController < ApplicationController
 
   # GET /listings/1/edit
   def edit
+    if @listing.user_id != current_user.id
+      flash[:alert] = 'You can not edit other users posts. If this is your account sign in.'
+      redirect_to root_path
+    end
   end
 
   # POST /listings
