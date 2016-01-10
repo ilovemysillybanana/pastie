@@ -13,6 +13,7 @@ gem 'bootstrap-sass'
 gem 'figaro'
 gem 'jquery-turbolinks'
 gem 'devise'
+gem 'closure_tree'
 
 group :development, :test do
   gem 'byebug'
