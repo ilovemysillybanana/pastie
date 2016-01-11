@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.2.2'
 
 gem 'rails', '4.2.5'
 gem 'sass-rails', '~> 5.0'
@@ -13,6 +14,7 @@ gem 'bootstrap-sass'
 gem 'figaro'
 gem 'jquery-turbolinks'
 gem 'devise'
+gem 'closure_tree'
 
 group :development, :test do
   gem 'byebug'

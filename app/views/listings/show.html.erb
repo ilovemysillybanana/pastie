@@ -1,6 +1,7 @@
 <%= stylesheet_link_tag "default.css"%>
 <%= javascript_include_tag "highlight.pack" %>
 
+<div class="codeblock">
 <p>
   <strong>Name:</strong>
   <%= @listing.name %>
@@ -22,3 +23,7 @@
 
 <%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-link" %> |
 <%= link_to 'Back', listings_path, class: "btn btn-link" %>
+</div>
+
+<div class="commentblock">
+</div>
