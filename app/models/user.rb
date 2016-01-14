@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :authentication_keys => [:login]
   has_many :listings, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   attr_accessor :login
 

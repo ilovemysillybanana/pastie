@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
 
-  resources :comments
   devise_for :users
-  resources :listings
+
+  resources :listings do
+    resources :comments
+  end
+
   root :to => "listings#index"
 
   get 'pages/about'

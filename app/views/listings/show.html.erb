@@ -26,5 +26,6 @@
 </div>
 
 <div class="commentblock">
-  <p>THIS IS WHERE COMMENTS WILL GO</p>
+  <%= render partial: 'comments/form' %>
+  <%= render partial: 'listings/comment', collection: @listing.comments %>
 </div>

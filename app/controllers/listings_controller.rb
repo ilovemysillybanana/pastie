@@ -5,12 +5,14 @@ class ListingsController < ApplicationController
   # GET /listings
   # GET /listings.json
   def index
-    @listings = Listing.all
+    @listings = Listing.all.order('created_at DESC')
   end
 
   # GET /listings/1
   # GET /listings/1.json
   def show
+    @comment = Comment.new
+    @comment.listing_id = @listing_id
   end
 
   # GET /listings/new
