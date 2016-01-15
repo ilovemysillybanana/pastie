@@ -26,6 +26,8 @@
 </div>
 
 <div class="commentblock">
-  <%= render partial: 'comments/form' %>
-  <%= render partial: 'listings/comment', collection: @listing.comments %>
+  <div class="text-left">
+    <%= render partial: 'comments/form' %>
+    <%= render partial: 'listings/comment', collection: @listing.comments.reverse %>
+  </div>
 </div>

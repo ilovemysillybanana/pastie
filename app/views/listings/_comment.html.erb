@@ -1,4 +1,6 @@
-<div>
-  <h4>Comment by <%= comment.user.username %></h4>
-  <p class="comment"><%= comment.body %></p>
+<div class="panel panel-default">
+  <div class="panel-heading"><%= comment.user.username %>: <%= time_ago_in_words(comment.created_at)%> ago</div>
+  <div class="panel-body">
+    <%= comment.body %>
+  </div>
 </div>

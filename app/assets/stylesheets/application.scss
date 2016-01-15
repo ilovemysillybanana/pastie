@@ -37,4 +37,13 @@ pre {
 	float: right;
 	border-color: black;
 	border-width: thick;
+	width: 640px; /*can be in percentage also.*/
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+}
+
+.comments {
+
 }
