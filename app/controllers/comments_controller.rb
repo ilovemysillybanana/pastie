@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!, :except => [:show]
+  
+
   def create
     @comment = Comment.new(params[comment_params])
     @comment.listing_id = params[:listing_id]

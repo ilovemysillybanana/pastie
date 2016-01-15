@@ -5,7 +5,8 @@ class ListingsController < ApplicationController
   # GET /listings
   # GET /listings.json
   def index
-    @listings = Listing.all.order('created_at DESC')
+    #@listings = Listing.all.order('created_at DESC')
+    @listings = Listing.all.paginate(:page => params[:page], :per_page => 2).order('created_at DESC')
   end
 
   # GET /listings/1
@@ -13,6 +14,7 @@ class ListingsController < ApplicationController
   def show
     @comment = Comment.new
     @comment.listing_id = @listing_id
+    #@comments = @listing.comments.paginate(:page => params[:page], :per_page =>5)
   end
 
   # GET /listings/new
