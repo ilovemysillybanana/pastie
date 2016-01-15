@@ -5,7 +5,7 @@ Our way to post code. Our, inclusive, meaning you. Don't like something? Change 
 To be a fully functional ruby on rails free alternative to pastebin.com.
 
 # Goals
-* Commenting System
+* Nicer comment forms
 * Private posts
 * A nicer UI/UX
 
@@ -13,6 +13,7 @@ To be a fully functional ruby on rails free alternative to pastebin.com.
 * Syntax highlighting
 * Post DB
 * Create accounts
+* Commenting System
 
 # How can I help?
 * Issues should be reported
