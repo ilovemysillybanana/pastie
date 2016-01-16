@@ -13,19 +13,9 @@ pre {
 	/* width: 99%; */		       /* only if needed */
 }
 
-/* no vertical scrollbars for IE 7 */
-*:first-child+html pre {
-	padding-bottom: 20px;
-	overflow-y: hidden;
-	overflow: visible;
-	overflow-x: auto;
-	}
-/* no vertical scrollbars for IE 6 */
-* html pre {
-	padding-bottom: 20px;
-	overflow: visible;
-	overflow-x: auto;
-	}
+body {
+	padding-top: 3%;
+}
 
 .codeblock {
 	display: inline-block;
@@ -42,8 +32,4 @@ pre {
     margin: 0 auto;
     padding: 10px;
     position: relative;
-}
-
-.comments {
-
 }
