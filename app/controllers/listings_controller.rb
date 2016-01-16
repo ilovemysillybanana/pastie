@@ -1,6 +1,14 @@
 class ListingsController < ApplicationController
-  before_action :authenticate_user!, :except => [:show, :index]
+  before_action :authenticate_user!, :except => [:search,:show, :index]
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
+
+  def search
+    if params[:search]
+      @listings = Listing.search(params[:search])
+    else
+      @listings = Listing.all
+    end
+  end
 
   # GET /listings
   # GET /listings.json

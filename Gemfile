@@ -15,6 +15,7 @@ gem 'figaro'
 gem 'jquery-turbolinks'
 gem 'devise'
 gem 'will_paginate'
+gem 'searchkick'
 
 group :development, :test do
   gem 'byebug'

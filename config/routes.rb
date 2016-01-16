@@ -4,7 +4,13 @@ Rails.application.routes.draw do
 
   resources :listings do
     resources :comments
+
+    collection do
+      get 'search'
+    end
   end
+
+
 
   root :to => "listings#index"
 
