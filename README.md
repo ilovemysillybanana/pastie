@@ -32,4 +32,5 @@ If for whatever reason, you feel that I have too low of a version of specific so
 All gems in the gems file should be the latest unless an issue is found with the newest version.
 * Ruby 2.2.2
 * Rails 4.2.5
+* Bootstrap
 * See Gem file for more information

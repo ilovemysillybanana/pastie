@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!, :except => [:show]
-  
+
 
   def create
     @comment = Comment.new(params[comment_params])
@@ -8,11 +8,12 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
     @comment.body = params[:comment][:body]
 
-    if @comment.save
+    if @comment.save && @comment.valid?
       flash[:success] = "Comment Successful."
       redirect_to listing_path(@comment.listing)
     else
-      flash[:alert] = "Comment Failed."
+      flash[:alert] = "#{@comment.errors.full_messages}"
+      redirect_to listing_path(@comment.listing)
     end
   end
 
