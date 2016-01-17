@@ -28,7 +28,6 @@
 <div class="commentblock">
   <div class="text-left">
     <%= render partial: 'comments/form' %>
-    <!--<%= render partial: 'listings/comment',  collection: @listing.comments.reverse %>-->
     <%= render partial: 'listings/comment',  collection: @listing_comments = @listing.comments.reverse.paginate(:page => params[:page], :per_page => 10) %>
     <%= will_paginate @listing_comments %>
   </div>
