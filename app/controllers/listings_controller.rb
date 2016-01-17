@@ -70,11 +70,17 @@ class ListingsController < ApplicationController
   # DELETE /listings/1
   # DELETE /listings/1.json
   def destroy
-    @listing.destroy
-    respond_to do |format|
-      format.html { redirect_to listings_url, notice: 'Listing was successfully destroyed.' }
-      format.json { head :no_content }
+    if @listing.user_id == current_user.id
+      @listing.destroy
+      respond_to do |format|
+        format.html { redirect_to listings_url, notice: 'Listing was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      format.html { redirect_to @listing, notice: 'You can not delte another users work.' }
+      format.json { render json: @listing.errors, status: :unprocessable_entity }
     end
+
   end
 
   private
