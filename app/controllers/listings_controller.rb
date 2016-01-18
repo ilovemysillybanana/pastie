@@ -30,7 +30,7 @@ class ListingsController < ApplicationController
 
   # GET /listings/1/edit
   def edit
-    if @listing.user_id != current_user.id
+    if @listing.user != current_user
       flash[:alert] = 'You can not edit other users posts. If this is your account sign in.'
       redirect_to root_path
     end
@@ -70,7 +70,7 @@ class ListingsController < ApplicationController
   # DELETE /listings/1
   # DELETE /listings/1.json
   def destroy
-    if @listing.user_id == current_user.id
+    if @listing.user == current_user
       @listing.destroy
       respond_to do |format|
         format.html { redirect_to listings_url, notice: 'Listing was successfully destroyed.' }
