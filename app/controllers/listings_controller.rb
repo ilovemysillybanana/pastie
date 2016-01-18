@@ -77,7 +77,7 @@ class ListingsController < ApplicationController
         format.json { head :no_content }
       end
     else
-      format.html { redirect_to @listing, notice: 'You can not delte another users work.' }
+      format.html { redirect_to @listing, notice: 'You can not delete another users work.' }
       format.json { render json: @listing.errors, status: :unprocessable_entity }
     end
 
