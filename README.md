@@ -8,6 +8,7 @@ To be a fully functional ruby on rails free alternative to pastebin.com.
 * A nicer UI/UX
 * Mobile Friendly Site
 * Private posts
+* Social Media Integration(Facebook, Twitter, Github login)
 * Did someone say AJAX?
 
 #Complete

@@ -13,4 +13,12 @@ class User < ActiveRecord::Base
   :uniqueness => {
     :case_sensitive => false
   }
+
+  before_create :randomize_id
+  private
+  def randomize_id
+    begin
+      self.id = SecureRandom.hex(15)
+    end while Listing.where(id: self.id).exists?
+  end
 end
