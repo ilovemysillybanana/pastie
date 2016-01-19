@@ -17,10 +17,10 @@
 
         <tbody>
           <% @listings.each do |listing| %>
-            <tr data-link="<%= listing_path(listing)%>">
-              <td><%= listing.name %></td>
+            <tr>
+              <td><%= link_to listing.name, listing %></td>
               <td><%= listing.language %></td>
-              <td><%= listing.user.username %></td>
+              <td><%= link_to listing.user.username, listing.user %></td>
               <td><%= time_ago_in_words(listing.created_at) %></td>
               <td>VOTES</td>
 

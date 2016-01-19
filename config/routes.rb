@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
+  resources :users, :only => [:show]
 
   resources :listings do
     resources :comments
@@ -10,7 +11,7 @@ Rails.application.routes.draw do
     end
   end
 
-
+  match 'users/show', to: 'users#show', via: 'get'
 
   root :to => "listings#index"
 
