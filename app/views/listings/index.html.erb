@@ -15,15 +15,16 @@
 
         <tbody>
           <% @listings.each do |listing| %>
-            <tr>
+            <tr data-link="<%= listing_path(listing)%>">
               <td><%= listing.name %></td>
+              <!--<td><%= link_to listing.name, listing, class: "btn btn-link"%></td>-->
               <td><%= listing.language %></td>
               <td><%= listing.user.username %></td>
-              <td><%= link_to 'Show', listing, class: "btn btn-link" %></td>
+              <!--<td><%= link_to 'Show', listing, class: "btn btn-link" %></td>-->
 
               <% if listing.user == current_user %>
-                <td><%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-link" %></td>
-                <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %></td>
+                <td><%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-primary" %></td>
+                <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
               <% end %>
 
             </tr>
@@ -38,4 +39,4 @@
 
 <br>
 
-<%= link_to 'New Listing', new_listing_path %>
+<%= link_to 'New Listing', new_listing_path, class: "btn btn-primary" %>
