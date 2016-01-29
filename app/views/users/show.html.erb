@@ -1,1 +1,7 @@
+<%= @user.username %>
+</br>
 <%= @user.email %>
+</br>
+<% @user.listings.each do |listing| %>
+  <p><%= listing.name %><br></p>
+<% end %>
