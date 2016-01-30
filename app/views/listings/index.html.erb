@@ -9,7 +9,7 @@
             <th>Language</th>
             <th>Creator</th>
             <th>Uploaded On</th>
-            <th>Upvotes</th>
+            <th>Votes</th>
             <th colspan="3"></th>
           </tr>
         </thead>
@@ -21,7 +21,7 @@
               <td><%= link_to listing.name, listing %></td>
               <td><%= listing.language %></td>
               <td><%= link_to listing.user.username, listing.user %></td>
-              <td><%= time_ago_in_words(listing.created_at) %></td>
+              <td><%= "#{time_ago_in_words(listing.created_at)} ago" %></td>
               <td>VOTES</td>
 
               <% if listing.user == current_user %>

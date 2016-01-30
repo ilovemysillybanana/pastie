@@ -22,13 +22,12 @@ body {
 }
 
 .codeblock {
+	float:center;
 	display: inline-block;
-	width: 50%;
-	float:left;
 }
 
 .commentblock {
-	float: right;
+	float: center;
 	border-color: black;
 	border-width: thick;
 	width: 640px; /*can be in percentage also.*/
