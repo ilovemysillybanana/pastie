@@ -1,0 +1,16 @@
+.codeblock {
+	display: inline-block;
+	width: 100%;
+	float:left;
+}
+
+.commentblock {
+	float: right;
+	border-color: black;
+	border-width: thick;
+	width: 100%; /*can be in percentage also.*/
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+}

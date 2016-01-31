@@ -1,6 +1,7 @@
 <div class="container">
   <div class="vertical-center-row">
     <div align="center">
+      <div class="index_table">
       <h1>Recent Uploads</h1>
       <table class="table table-hover table-condensed">
         <thead>
@@ -8,7 +9,7 @@
             <th>Name</th>
             <th>Language</th>
             <th>Creator</th>
-            <th>Uploaded On</th>
+            <th>Time</th>
             <th>Votes</th>
             <th colspan="3"></th>
           </tr>
@@ -35,6 +36,7 @@
         </tbody>
       </table>
       <%= will_paginate @listings %>
+    </div>
     </div>
   </div>
 <div>
