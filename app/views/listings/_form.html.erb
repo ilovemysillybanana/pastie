@@ -19,8 +19,8 @@
     <%= f.text_area :code, class: "form-control", :rows => 12 %>
   </div>
   <div class="form-group">
-    <%= f.label :language %><br>
-    <%= f.text_field :language, class: "form-control"%>
+    <%= f.label :language %>
+    <%= f.collection_select :language, Listing::LANGUAGES.sort, :to_s, :to_s, { prompt: "Select Language"}, { class: "form-control"}%>
   </div>
   <div class="actions">
     <%= f.submit class: "btn btn-primary"%>

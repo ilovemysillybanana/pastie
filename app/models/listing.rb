@@ -12,6 +12,26 @@ class Listing < ActiveRecord::Base
     :length => { :minimum => 1, :maximum => 4000}
 
   before_create :randomize_id
+
+  LANGUAGES = [
+    'Ruby',
+    'Bash',
+    'Python',
+    'Java',
+    'C++',
+    'C',
+    'JavaScript',
+    'CSS',
+    'PHP',
+    'SQL',
+    'C#',
+    'XML',
+    'Apache',
+    'JSON',
+    'CoffeeScript',
+    'Perl',
+    'HTML'
+  ]
   private
   def randomize_id
     begin
