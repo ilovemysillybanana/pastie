@@ -22,15 +22,16 @@ body {
 }
 
 .codeblock {
-	float:center;
 	display: inline-block;
+	width: 100%;
+	float:left;
 }
 
 .commentblock {
-	float: center;
+	float: right;
 	border-color: black;
 	border-width: thick;
-	width: 640px; /*can be in percentage also.*/
+	width: 100%; /*can be in percentage also.*/
     height: auto;
     margin: 0 auto;
     padding: 10px;
