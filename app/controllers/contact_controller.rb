@@ -8,9 +8,7 @@ class ContactController < ApplicationController
     @contact = Contact.new(contact_params)
     if @contact.valid?
       flash[:success] = "Message Sent!"
-      UserNotifier.send_contact_email(@contact).deliver_now
-      #this is just an example of how to access the information
-      #flash[:success] = @contact.name
+      UserNotifier.send_contact_email(@contact).deliver_later
       redirect_to root_path
     else
       flash[:error] = @contact.errors.messages

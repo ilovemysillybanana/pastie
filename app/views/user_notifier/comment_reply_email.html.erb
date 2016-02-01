@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>Hello, <%= @comment_info.listing.user.username %> this is an email notification letting you know that a user has responded to your post.</p>
+    <p>Here is the link to that post: <%= link_to "here" , listing_path(@comment_info.listing)%></p>
+    <p><%= @comment_info.body %></p>
+  </body>
+</html>

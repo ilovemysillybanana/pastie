@@ -9,4 +9,12 @@ class UserNotifier < ApplicationMailer
 
   end
 
+  def comment_reply_email(comment)
+    @comment_info = comment
+    mail(
+      to: @comment_info.listing.user.email,
+      subject: "A user replied to: #{@comment_info.listing.name}"
+    )
+  end
+
 end

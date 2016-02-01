@@ -11,6 +11,7 @@ class CommentsController < ApplicationController
     if @comment.save && @comment.valid?
       flash[:success] = "Comment Successful."
       redirect_to listing_path(@comment.listing)
+      UserNotifier.comment_reply_email(@comment).deliver_later
     else
       flash[:alert] = "#{@comment.errors.full_messages}"
       redirect_to listing_path(@comment.listing)
