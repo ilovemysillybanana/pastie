@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160201002139) do
+ActiveRecord::Schema.define(version: 20160201023400) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
@@ -30,10 +30,25 @@ ActiveRecord::Schema.define(version: 20160201002139) do
     t.string   "name"
     t.text     "code"
     t.string   "language"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
     t.integer  "user_id"
+    t.integer  "cached_votes_total",      default: 0
+    t.integer  "cached_votes_score",      default: 0
+    t.integer  "cached_votes_up",         default: 0
+    t.integer  "cached_votes_down",       default: 0
+    t.integer  "cached_weighted_score",   default: 0
+    t.integer  "cached_weighted_total",   default: 0
+    t.float    "cached_weighted_average", default: 0.0
   end
+
+  add_index "listings", ["cached_votes_down"], name: "index_listings_on_cached_votes_down"
+  add_index "listings", ["cached_votes_score"], name: "index_listings_on_cached_votes_score"
+  add_index "listings", ["cached_votes_total"], name: "index_listings_on_cached_votes_total"
+  add_index "listings", ["cached_votes_up"], name: "index_listings_on_cached_votes_up"
+  add_index "listings", ["cached_weighted_average"], name: "index_listings_on_cached_weighted_average"
+  add_index "listings", ["cached_weighted_score"], name: "index_listings_on_cached_weighted_score"
+  add_index "listings", ["cached_weighted_total"], name: "index_listings_on_cached_weighted_total"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
