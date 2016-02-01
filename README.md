@@ -6,8 +6,11 @@ To be a fully functional ruby on rails free alternative to pastebin.com.
 
 # Goals
 * A nicer UI/UX
-* Mobile Friendly Site
 * Private posts
+* Private Messaging System
+* User Reputation System
+* Comment Replies
+* Comment-Reply Voting
 * Social Media Integration(Facebook, Twitter, Github login)
 * Did someone say AJAX?
 
@@ -16,7 +19,11 @@ To be a fully functional ruby on rails free alternative to pastebin.com.
 * Post DB
 * Create accounts
 * Commenting System
+* Mobile Friendly Site
 * Nicer comment forms
+* ReCaptcha Integration
+* Email Notification
+* Post Voting
 
 # How can I help?
 * Issues should be reported
@@ -35,4 +42,5 @@ All gems in the gems file should be the latest unless an issue is found with the
 * Rails 4.2.5
 * Elasticsearch
 * Bootstrap
+* Google ReCAPTCHA
 * See Gem file for more information
