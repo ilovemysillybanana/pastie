@@ -17,6 +17,7 @@ gem 'devise'
 gem 'will_paginate'
 gem 'searchkick'
 gem 'acts_as_votable', '~> 0.10.0'
+gem "recaptcha", :require => "recaptcha/rails"
 
 group :development, :test do
   gem 'byebug'

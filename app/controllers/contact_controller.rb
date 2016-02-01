@@ -6,9 +6,11 @@ class ContactController < ApplicationController
 
   def contactus
     @contact = Contact.new(contact_params)
-    if @contact.valid?
+
+    @contact.valid?
+    if verify_recaptcha(:model => @contact, :Message => "Please enter the correct captcha.")
       flash[:success] = "Message Sent!"
-      UserNotifier.send_contact_email(@contact).deliver_later
+      UserNotifier.send_contact_email(@contact).deliver_now
       redirect_to root_path
     else
       flash[:error] = @contact.errors.messages
@@ -18,9 +20,10 @@ class ContactController < ApplicationController
           flash[:error] = "#{msg}\n"
         end
       end
-
       redirect_to contact_path
     end
+
+
   end
 
   private
