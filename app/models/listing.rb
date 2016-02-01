@@ -3,6 +3,7 @@ class Listing < ActiveRecord::Base
 
   belongs_to :user
   has_many :comments
+  acts_as_votable
 
   validates :name, :presence => true,
     :length => { :minimum => 1, :maximum => 25}

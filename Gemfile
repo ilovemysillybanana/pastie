@@ -16,6 +16,7 @@ gem 'jquery-turbolinks'
 gem 'devise'
 gem 'will_paginate'
 gem 'searchkick'
+gem 'acts_as_votable', '~> 0.10.0'
 
 group :development, :test do
   gem 'byebug'

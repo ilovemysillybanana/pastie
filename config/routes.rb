@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   resources :listings do
     resources :comments
 
+    member do
+      put "like" => "listings#upvote"
+      put "unlike" => "listings#downvote"
+    end
+
     collection do
       get 'search'
     end

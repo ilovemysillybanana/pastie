@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
   before_action :authenticate_user!, :except => [:search,:show, :index]
-  before_action :set_listing, only: [:show, :edit, :update, :destroy]
+  before_action :set_listing, only: [:show, :edit, :update, :destroy, :downvote, :upvote]
 
   def search
     if params[:search]
@@ -81,6 +81,16 @@ class ListingsController < ApplicationController
       redirect_to root_path
     end
 
+  end
+
+  def upvote
+    @listing.upvote_from current_user
+    redirect_to :back
+  end
+
+  def downvote
+    @listing.downvote_from current_user
+    redirect_to :back
   end
 
   private

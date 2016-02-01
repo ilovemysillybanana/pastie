@@ -24,8 +24,25 @@
 <pre><code><%= @listing.code %></code></pre>
 </article>
 
-<%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-link" %> |
-<%= link_to 'Back', listings_path, class: "btn btn-link" %>
+<div>
+  <%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-link" %> |
+  <%= link_to 'Back', listings_path, class: "btn btn-link" %>
+
+  <%= link_to like_listing_path(@listing), class: "like", method: :put do %>
+  <button type="button" class="btn btn-info" aria-label="Left Align">
+    <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
+    <span class="badge"><%= @listing.get_upvotes.size%></span>
+  </button>
+  <% end %>
+
+  <%= link_to unlike_listing_path(@listing), class: "like", method: :put do %>
+  <button type="button" class="btn btn-info" aria-label="Left Align">
+    <span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true"></span>
+    <span class="badge"><%= @listing.get_downvotes.size%></span>
+  </button>
+  <% end %>
+</div>
+
 </div>
 
 <div class="commentblock">

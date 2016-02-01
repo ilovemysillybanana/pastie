@@ -23,7 +23,23 @@
               <td><%= listing.language %></td>
               <td><%= link_to listing.user.username, listing.user %></td>
               <td><%= "#{time_ago_in_words(listing.created_at)} ago" %></td>
-              <td>VOTES</td>
+              <td>
+
+                <%= link_to like_listing_path(listing), class: "like", method: :put do %>
+                <button type="button" class="btn btn-info" aria-label="Left Align">
+                  <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
+                  <span class="badge"><%= listing.get_upvotes.size%></span>
+                </button>
+                <% end %>
+
+                <%= link_to unlike_listing_path(listing), class: "like", method: :put do %>
+                <button type="button" class="btn btn-info" aria-label="Left Align">
+                  <span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true"></span>
+                  <span class="badge"><%= listing.get_downvotes.size%></span>
+                </button>
+                <% end %>
+
+              </td>
 
               <% if listing.user == current_user %>
                 <td><%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-primary" %></td>
