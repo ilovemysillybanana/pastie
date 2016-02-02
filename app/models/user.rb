@@ -2,11 +2,21 @@ class User < ActiveRecord::Base
   acts_as_voter
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :authentication_keys => [:login]
+  devise :omniauthable, :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :authentication_keys => [:login]
   has_many :listings, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :identities
 
+  def facebook
+    identities.where( :provider => "facebook" ).first
+  end
+
+  def facebook_client
+    @facebook_client ||= Facebook.client( access_token: facebook.accesstoken )
+  end
+
+  
   attr_accessor :login
 
 

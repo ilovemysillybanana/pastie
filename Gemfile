@@ -18,6 +18,8 @@ gem 'will_paginate'
 gem 'searchkick'
 gem 'acts_as_votable', '~> 0.10.0'
 gem "recaptcha", :require => "recaptcha/rails"
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 group :development, :test do
   gem 'byebug'
