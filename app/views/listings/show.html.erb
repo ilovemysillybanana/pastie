@@ -30,14 +30,14 @@
 
   <%= link_to like_listing_path(@listing), class: "like", method: :put do %>
   <button type="button" class="btn btn-info" aria-label="Left Align">
-    <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-chevron-up glyphicon-align-center" aria-hidden="true"></span>
     <span class="badge"><%= @listing.get_upvotes.size%></span>
   </button>
   <% end %>
 
   <%= link_to unlike_listing_path(@listing), class: "like", method: :put do %>
   <button type="button" class="btn btn-info" aria-label="Left Align">
-    <span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-chevron-down glyphicon-align-center" aria-hidden="true"></span>
     <span class="badge"><%= @listing.get_downvotes.size%></span>
   </button>
   <% end %>
