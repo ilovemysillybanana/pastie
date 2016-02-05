@@ -20,6 +20,7 @@ gem 'acts_as_votable', '~> 0.10.0'
 gem "recaptcha", :require => "recaptcha/rails"
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'omniauth-github'
 
 group :development, :test do
   gem 'byebug'

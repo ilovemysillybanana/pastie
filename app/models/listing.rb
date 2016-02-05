@@ -36,7 +36,7 @@ class Listing < ActiveRecord::Base
   private
   def randomize_id
     begin
-      self.id = SecureRandom.hex(15)
+      self.id = SecureRandom.hex(10)
     end while Listing.where(id: self.id).exists?
   end
 end
