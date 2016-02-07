@@ -21,6 +21,7 @@ gem "recaptcha", :require => "recaptcha/rails"
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-github'
+gem "omniauth-google-oauth2"
 
 group :development, :test do
   gem 'byebug'
