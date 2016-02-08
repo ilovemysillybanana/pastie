@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!, :except => [:show]
-
+  before_action :set_comment, only: [:show, :edit, :update, :destroy, :downvote, :upvote]
 
   def create
     @comment = Comment.new(params[comment_params])
@@ -18,6 +18,16 @@ class CommentsController < ApplicationController
     end
   end
 
+  def upvote
+    @comment.upvote_from current_user
+    redirect_to listing_path(@comment.listing_id)
+  end
+
+  def downvote
+    @comment.downvote_from current_user
+    redirect_to listing_path(@comment.listing_id)
+  end
+
   def destroy
     @comment = @listing.comments.find(params[:id])
     @comment.destroy
@@ -28,5 +38,9 @@ class CommentsController < ApplicationController
   private
   def comment_params
     params.require(:comment).permit(:user, :body)
+  end
+
+  def set_comment
+    @comment = Comment.find(params[:id])
   end
 end

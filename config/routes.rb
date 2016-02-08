@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
-
-  get 'inquiries/usernameinquiry'
-
   devise_for :users, :controllers => { :registrations => "registrations", :omniauth_callbacks => "callbacks" }
-  resources :users, :only => [:show]
-
   devise_scope :user do
     get '/users/auth/:provider/upgrade' => 'omniauth_callbacks#upgrade', as: :user_omniauth_upgrade
     get '/users/auth/:provider/setup', :to => 'omniauth_callbacks#setup'
   end
-
+  resources :users, :only => [:show]
   resources :listings do
-    resources :comments
+    resources :comments do
+      member do
+        put "like" => "comments#upvote"
+        put "unlike" => "comments#downvote"
+      end
+    end
 
     member do
       put "like" => "listings#upvote"

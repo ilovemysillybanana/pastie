@@ -1,6 +1,31 @@
 <div class="panel panel-default">
-  <div class="panel-heading"><%= comment.user.username %>: <%= time_ago_in_words(comment.created_at)%> ago</div>
+  <div class="panel-heading">
+    <div>
+      <div align="left">
+        <%= comment.user.username %>: <%= time_ago_in_words(comment.created_at)%> ago
+      </div>
+
+      <div align="right">
+        <%= link_to like_listing_comment_path(comment.listing_id, comment.id), class: "like", method: :put do %>
+        <button type="button" class="btn btn-info" aria-label="Left Align">
+          <span class="glyphicon glyphicon-chevron-up glyphicon-align-center" aria-hidden="true"></span>
+          <span class="badge"><%= comment.get_upvotes.size%></span>
+        </button>
+        <% end %>
+
+        <%= link_to unlike_listing_comment_path(comment.listing_id, comment.id), class: "unlike", method: :put do %>
+        <button type="button" class="btn btn-info" aria-label="Left Align">
+          <span class="glyphicon glyphicon-chevron-down glyphicon-align-center" aria-hidden="true"></span>
+          <span class="badge"><%= comment.get_downvotes.size%></span>
+        </button>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
   <div class="panel-body">
     <%= comment.body %>
+  </div>
+  <div class="panel-footer">
   </div>
 </div>
