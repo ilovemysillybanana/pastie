@@ -25,8 +25,10 @@
 </article>
 
 <div>
-  <%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-link" %> |
-  <%= link_to 'Back', listings_path, class: "btn btn-link" %>
+  <% if @listing.user == current_user %>
+    <%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-primary" %>
+    <%= link_to 'Delete', @listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+  <% end %>
 
   <%= link_to like_listing_path(@listing), class: "like", method: :put do %>
   <button type="button" class="btn btn-info" aria-label="Left Align">

@@ -44,11 +44,6 @@
 
               </td>
 
-              <% if listing.user == current_user %>
-                <td><%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-primary" %></td>
-                <td><%= link_to 'Delete', listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
-              <% end %>
-
             </tr>
           <% end %>
 
