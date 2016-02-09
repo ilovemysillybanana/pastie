@@ -1,3 +1,4 @@
+<% provide(:title, "#{@listing.name} by #{@listing.user.username}") %>
 <%= stylesheet_link_tag "default.css"%>
 <%= javascript_include_tag "highlight.pack" %>
 <% content_for :head do %>

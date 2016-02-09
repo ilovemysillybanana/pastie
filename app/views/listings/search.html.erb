@@ -1,8 +1,12 @@
+<% provide(:title, "Search Results") %>
+<div class="rec_uploads">
+  <h1>trending</h1>
+</div>
 <div class="container">
   <div class="vertical-center-row">
     <div align="center">
-      <div class="index_table">
-      <h1>Recent Uploads</h1>
+      <div class="index_table align-center">
+
       <table class="table table-hover table-condensed">
         <thead>
           <tr>
@@ -23,12 +27,23 @@
               <td><%= listing.language %></td>
               <td><%= link_to listing.user.username, listing.user %></td>
               <td><%= "#{time_ago_in_words(listing.created_at)} ago" %></td>
-              <td>VOTES</td>
+              <td>
 
-              <% if listing.user == current_user %>
-                <td><%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-primary" %></td>
-                <td><%= link_to 'Delete', listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
-              <% end %>
+                <%= link_to like_listing_path(listing), class: "like", method: :put do %>
+                <button type="button" class="btn btn-info" aria-label="Left Align">
+                  <span class="glyphicon glyphicon-chevron-up glyphicon-align-center" aria-hidden="true"></span>
+                  <span class="badge"><%= listing.get_upvotes.size%></span>
+                </button>
+                <% end %>
+
+                <%= link_to unlike_listing_path(listing), class: "like", method: :put do %>
+                <button type="button" class="btn btn-info" aria-label="Left Align">
+                  <span class="glyphicon glyphicon-chevron-down glyphicon-align-center" aria-hidden="true"></span>
+                  <span class="badge"><%= listing.get_downvotes.size%></span>
+                </button>
+                <% end %>
+
+              </td>
 
             </tr>
           <% end %>
