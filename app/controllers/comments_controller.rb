@@ -8,13 +8,15 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
     @comment.body = params[:comment][:body]
 
-    if @comment.save && @comment.valid?
-      flash[:success] = "Comment Successful."
-      redirect_to listing_path(@comment.listing)
-      UserNotifier.comment_reply_email(@comment).deliver_later
-    else
-      flash[:alert] = "#{@comment.errors.full_messages}"
-      redirect_to listing_path(@comment.listing)
+    respond_to do |format|
+      if @comment.save && @comment.valid?
+        format.html { redirect_to listing_path(@comment.listing), alert: "Comment Successful."}
+        format.js
+        UserNotifier.comment_reply_email(@comment).deliver_later
+      else
+        format.html { redirect_to listing_path(@comment.listing), alert: "#{@comment.errors.full_messages}"}
+        format.js
+      end
     end
   end
 

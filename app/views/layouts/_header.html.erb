@@ -27,26 +27,26 @@
              <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><%= link_to "Profile", current_user%></li>
-            <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+            <li><%= link_to "Edit Profile", edit_user_registration_path%></li>
             <li role="separator" class="divider"></li>
             <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
           </ul>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to 'New Paste', new_listing_path%></li>
+        <li><%= link_to 'New Paste', new_listing_path, remote: true, data: {toggle:"modal", target: "#new-form"}%></li>
       </ul>
       <% else %>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Sign up", new_user_registration_path %></li>
-        <li><%= link_to "Sign in", new_user_session_path %></li>
+        <li><%= link_to "Sign up", new_user_registration_path%></li>
+        <li><%= link_to "Sign in", new_user_session_path%></li>
       </ul>
       <% end %>
 
       <ul class="nav navbar-nav navbar-right">
 
-        <li><%= link_to "About", pages_about_path %></li>
-        <li><%= link_to "Contact", contact_path %></li>
+        <li><%= link_to "About", pages_about_path%></li>
+        <li><%= link_to "Contact", contact_path%></li>
       </ul>
 
     </div><!-- navbar collapse-->

@@ -1,7 +1,7 @@
 <% provide(:title, "Contact Us") %>
 <h2 class="text-center">Contact Us</h2>
 
-<%= form_tag({controller: "contact", action: "contactus"}, method: "post", class: "form-group") do%>
+<%= form_tag({controller: "contact", action: "contactus"}, method: "post", class: "form-group", remote: true) do%>
 <div class="form-group">
   <%= label_tag(:name, "Name: ")%>
   <%= text_field_tag(:name,'', :placeholder => 'John Smith' ,class: "form-control")%>

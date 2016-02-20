@@ -1,6 +1,6 @@
 <h3>Post a Comment</h3>
 <div class="form-group">
-    <%= form_for [ @listing, @comment ] do |f| %>
+    <%= form_for [ @listing, @comment] do |f| %>
         <%= f.text_area :body, class: "form-control" %>
     </br>
         <%= f.submit 'Submit', class: "btn btn-primary" %>

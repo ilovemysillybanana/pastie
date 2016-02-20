@@ -4,6 +4,7 @@
   <title><%= yield(:title) %> | Pastie, The Internet's First Social Clipboard</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag :defaults %>
   <meta name="viewport" content="width=device-width">
   <%= yield :head %>
   <%= csrf_meta_tags %>
@@ -11,6 +12,7 @@
 
 <body>
   <%= render 'layouts/header'%>
+  <div class="modal fade" id="new-form" tabindex="-1"  role="dialog" aria-labelledby="myModalLabel"></div>
   <div class="container-fluid">
     <% flash.each do |name, msg| %>
       <% if msg.is_a?(String) %>
@@ -20,7 +22,6 @@
       </div>
       <% end %>
     <% end %>
-
 <%= yield %>
 
 

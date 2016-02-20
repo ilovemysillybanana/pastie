@@ -1,28 +1,34 @@
-<%= form_for(@listing, :html => { multipart: true }) do |f| %>
-  <% if @listing.errors.any? %>
-    <div id="error_explanation" class= "alert alert-danger alert-dismissable">
-      <h2><%= pluralize(@listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
+<%= form_for(@listing, :html => { class: ""}) do |f| %>
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <% if @listing.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger alert-dismissable">
+      <h2><%= pluralize(@listing.errors.count, "error") %>
+        prohibited this listing from being saved:</h2>
       <ul>
-      <% @listing.errors.full_messages.each do |message| %>
+        <% @listing.errors.full_messages.each do |message| %>
         <li><%= message %></li>
-      <% end %>
+        <% end %>
       </ul>
     </div>
-  <% end %>
+    <% end %>
 
-  <div class="form-group">
-    <%= f.label :name %><br>
-    <%= f.text_field :name, class: "form-control" %>
+    <div class="form-group modal-header">
+      <%= f.label :name %><br>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <div class="form-group modal-body">
+      <%= f.label :code %><br>
+      <%= f.text_area :code, class: "form-control", :rows => 12 %>
+    </div>
+    <div class="form-group modal-body">
+      <%= f.label :language %>
+      <%= f.collection_select :language, Listing::LANGUAGES.sort, :to_s, :to_s, { prompt: "Select Language"}, { class: "form-control"}%>
+    </div>
+    <div class="actions modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      <%= f.submit class: "btn btn-primary"%>
+    </div>
   </div>
-  <div class="form-group">
-    <%= f.label :code %><br>
-    <%= f.text_area :code, class: "form-control", :rows => 12 %>
-  </div>
-  <div class="form-group">
-    <%= f.label :language %>
-    <%= f.collection_select :language, Listing::LANGUAGES.sort, :to_s, :to_s, { prompt: "Select Language"}, { class: "form-control"}%>
-  </div>
-  <div class="actions">
-    <%= f.submit class: "btn btn-primary"%>
-  </div>
+</div>
 <% end %>
