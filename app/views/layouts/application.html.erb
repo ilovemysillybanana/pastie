@@ -13,6 +13,7 @@
 <body>
   <%= render 'layouts/header'%>
   <div class="modal fade" id="new-form" tabindex="-1"  role="dialog" aria-labelledby="myModalLabel"></div>
+  <div class="modal fade" id="contact-form" tabindex="-1"  role="dialog" aria-labelledby="myModalLabel"></div>
   <div class="container-fluid">
     <% flash.each do |name, msg| %>
       <% if msg.is_a?(String) %>
