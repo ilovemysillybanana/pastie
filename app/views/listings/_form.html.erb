@@ -1,5 +1,7 @@
 <div class="modal-dialog" role="document">
   <div class="modal-content">
+    <% provide(:title, "New Paste") %>
+    <h2 class="text-center">New Post</h2>
     <%= form_for(@listing, :html => { }) do |f| %>
     <% if @listing.errors.any? %>
     <div id="error_explanation" class="alert alert-danger alert-dismissable">
