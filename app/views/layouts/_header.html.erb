@@ -44,9 +44,8 @@
       <% end %>
 
       <ul class="nav navbar-nav navbar-right">
-
-        <li><%= link_to "About", pages_about_path%></li>
-        <li><%= link_to "Contact", contact_path%></li>
+        <li><%= link_to 'About', pages_about_path%></li>
+        <li><%= link_to 'Contact', contact_path, remote: true, data: {toggle:"modal", target: "#contact-form"}%></li>
       </ul>
 
     </div><!-- navbar collapse-->

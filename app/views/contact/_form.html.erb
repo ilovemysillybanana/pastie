@@ -1,0 +1,34 @@
+<div class="modal-dialog" role="document">
+
+
+  <div class="modal-content">
+    <div class="text-center">
+      <h2>Contact Us</h2>
+    </div>
+    <%= form_tag({controller: "contact", action: "contactus"}, method: "post", class: "form-group") do%>
+    <div class="form-group modal-header">
+      <%= label_tag(:name, "Name: ")%>
+      <%= text_field_tag(:name,'', :placeholder => 'John Smith' ,class: "form-control")%>
+    </div>
+    <div class="form-group modal-body">
+      <%= label_tag(:email, "Email: ")%>
+      <%= text_field_tag(:email,'', :placeholder => 'johnsmith@example.com', class: "form-control")%>
+
+      <%= label_tag(:subject, "Subject: ")%>
+      <%= text_field_tag(:subject,'', :placeholder => 'Advertisement Opportunity', class: "form-control")%>
+
+      <%= label_tag(:phone, "Phone: ")%>
+      <%= text_field_tag(:phone,'', :placeholder => '15554443333', class: "form-control")%>
+    
+      <%= label_tag(:content, "Message: ")%>
+      <%= text_area_tag(:content,'', :placeholder => 'I would like to talk to you please give me a call.', class: "form-control")%>
+    </div>
+      <div class="actions modal-footer">
+        <%= raw recaptcha_tags %>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <%= submit_tag("Submit", class: "btn btn-primary")%>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

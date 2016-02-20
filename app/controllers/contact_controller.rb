@@ -1,4 +1,5 @@
 class ContactController < ApplicationController
+  respond_to :html, :js
 
   def index
     @contact = Contact.new
