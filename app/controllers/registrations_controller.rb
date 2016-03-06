@@ -1,5 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
-  respond_to :html, :js
+  clear_respond_to
+  respond_to :html, :js, :json
   protected
 
   def update_resource(resource, params)
