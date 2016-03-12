@@ -25,7 +25,14 @@
             <tr>
               <td><%= link_to listing.name, listing %></td>
               <td><%= listing.language %></td>
-              <td><%= link_to listing.user.username, listing.user %></td>
+              <td>
+                <% if listing.user == (nil) %>
+                  <%= link_to 'Anonymous', '#'%>
+                <% else %>
+                   <%= link_to listing.user.username, listing.user%>
+                <% end %>
+              </td>
+
               <td><%= "#{time_ago_in_words(listing.created_at)} ago" %></td>
               <td>
 
@@ -58,4 +65,5 @@
 
 <br>
 
-<%= link_to 'New Paste', new_listing_path, class: "btn btn-primary" %>
+
+<%= link_to 'New Paste', new_listing_path, class: "btn btn-primary", remote: true, data: {toggle:"modal", target: "#new-form"} %>

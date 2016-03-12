@@ -1,4 +1,9 @@
-<% provide(:title, "#{@listing.name} by #{@listing.user.username}") %>
+<% if @listing.user == (nil) %>
+  <% provide(:title, "#{@listing.name} by Anonymous") %>
+<% else %>
+   <% provide(:title, "#{@listing.name} by #{@listing.user.username}") %>
+<% end %>
+
 <%= stylesheet_link_tag "default.css"%>
 <%= javascript_include_tag "highlight.pack" %>
 <% content_for :head do %>
@@ -13,7 +18,11 @@
 
 <p>
   <strong>Creator:</strong>
-  <%= link_to @listing.user.username, @listing.user %>
+  <% if @listing.user == (nil) %>
+    <%= link_to 'Anonymous', '#'%>
+  <% else %>
+     <%= link_to @listing.user.username, @listing.user%>
+  <% end %>
 </p>
 
 <p>

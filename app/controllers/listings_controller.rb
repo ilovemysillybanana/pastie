@@ -1,8 +1,8 @@
 class ListingsController < ApplicationController
-  before_action :authenticate_user!, :except => [:search,:show, :index]
+  before_action :authenticate_user!, :except => [:search,:show, :index, :create, :new]
   before_action :set_listing, only: [:show, :edit, :update, :destroy, :downvote, :upvote]
   respond_to :html, :js
-  
+
   def search
     if params[:search]
       @listings = Listing.search(params[:search])
@@ -41,7 +41,11 @@ class ListingsController < ApplicationController
   # POST /listings.json
   def create
     @listing = Listing.new(listing_params)
-    @listing.user = current_user
+    if !user_signed_in?
+      @listing_user = User.new(:username => "Anonymous")
+    else
+      @listing.user = current_user
+    end
 
     respond_to do |format|
       if @listing.save
