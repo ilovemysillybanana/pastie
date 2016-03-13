@@ -3,7 +3,7 @@ class CreateListings < ActiveRecord::Migration
     create_table :listings do |t|
       t.string :name
       t.text :code
-      t.string :language
+      t.string :language, :default => 'Plain Text'
 
       t.timestamps null: false
     end

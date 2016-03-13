@@ -47,9 +47,9 @@ ActiveRecord::Schema.define(version: 20160205062428) do
   create_table "listings", force: :cascade do |t|
     t.string   "name"
     t.text     "code"
-    t.string   "language"
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
+    t.string   "language",                default: "Plain Text"
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
     t.integer  "user_id"
     t.integer  "cached_votes_total",      default: 0
     t.integer  "cached_votes_score",      default: 0
