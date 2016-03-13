@@ -33,9 +33,6 @@
           </ul>
         </li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to 'New Paste', new_listing_path, remote: true, data: {toggle:"modal", target: "#new-form"}%></li>
-      </ul>
       <% else %>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Sign up", new_user_registration_path, remote: true, data: {toggle:"modal", target: "#new_account"}%></li>
