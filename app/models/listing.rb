@@ -8,9 +8,9 @@ class Listing < ActiveRecord::Base
   validates :name, :presence => true,
     :length => { :minimum => 1, :maximum => 25}
   validates :language, :allow_nil => true,
-    :length => { :minimum => 1, :maximum => 25}
+    :length => { :minimum => 0, :maximum => 25}
   validates :code, :presence => true,
-    :length => { :minimum => 1, :maximum => 4000}
+    :length => { :minimum => 1, :maximum => 10000}
 
   before_create :randomize_id
 
@@ -31,7 +31,8 @@ class Listing < ActiveRecord::Base
     'JSON',
     'CoffeeScript',
     'Perl',
-    'HTML'
+    'HTML',
+    'Plain Text'
   ]
   private
   def randomize_id

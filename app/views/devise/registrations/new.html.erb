@@ -33,12 +33,13 @@
       </div>
 
       <div class="form-group modal-footer">
-      <br>
-      <%= raw recaptcha_tags %>
-      <br>
-        <%= f.submit "Sign up", class: "btn btn-primary" %>
-        <br>
-        <%= render "devise/shared/links" %>
+
+        <div class="actions modal-footer">
+          <%= raw recaptcha_tags %>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <%= f.submit "Sign up", class: "btn btn-primary" %>
+          <%= render "devise/shared/links" %>
+        </div>
       </div>
     <% end %>
   </div>
