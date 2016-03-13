@@ -5,8 +5,8 @@ class Listing < ActiveRecord::Base
   has_many :comments
   acts_as_votable
 
-  validates :name, :presence => true,
-    :length => { :minimum => 1, :maximum => 25}
+  validates :name, :allow_nil => true,
+    :length => { :minimum => 0, :maximum => 25}
   validates :language, :allow_nil => true,
     :length => { :minimum => 0, :maximum => 25}
   validates :code, :presence => true,

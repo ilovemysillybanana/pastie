@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20160205062428) do
   add_index "identities", ["user_id"], name: "index_identities_on_user_id"
 
   create_table "listings", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",                    default: "Untitled"
     t.text     "code"
     t.string   "language",                default: "Plain Text"
     t.datetime "created_at",                                     null: false
