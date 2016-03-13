@@ -14,7 +14,7 @@ class ListingsController < ApplicationController
   # GET /listings
   # GET /listings.json
   def index
-    @listings = Listing.all.paginate(:page => params[:page], :per_page => 25).order(:cached_votes_score => :desc)
+    @listings = Listing.all.where(:private => false).paginate(:page => params[:page], :per_page => 25).order(:cached_votes_score => :desc)
   end
 
   # GET /listings/1
@@ -107,6 +107,6 @@ class ListingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
-      params.require(:listing).permit(:name, :code, :language)
+      params.require(:listing).permit(:name, :code, :language, :private)
     end
 end

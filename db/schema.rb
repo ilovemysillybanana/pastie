@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160205062428) do
+ActiveRecord::Schema.define(version: 20160313064926) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
@@ -45,11 +45,11 @@ ActiveRecord::Schema.define(version: 20160205062428) do
   add_index "identities", ["user_id"], name: "index_identities_on_user_id"
 
   create_table "listings", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",                    default: "Untitled"
     t.text     "code"
-    t.string   "language"
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
+    t.string   "language",                default: "Plain Text"
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
     t.integer  "user_id"
     t.integer  "cached_votes_total",      default: 0
     t.integer  "cached_votes_score",      default: 0
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20160205062428) do
     t.integer  "cached_weighted_score",   default: 0
     t.integer  "cached_weighted_total",   default: 0
     t.float    "cached_weighted_average", default: 0.0
+    t.boolean  "private",                 default: false
   end
 
   add_index "listings", ["cached_votes_down"], name: "index_listings_on_cached_votes_down"
