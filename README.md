@@ -5,12 +5,12 @@ Our way to post code. Our, inclusive, meaning you. Don't like something? Change 
 To be a fully functional ruby on rails free alternative to pastebin.com.
 
 # Goals
-* Private posts
 * Private Messaging System
 * User Reputation System
+* Better User Profile View
 * Comment Replies
 * Comment-Reply Voting
-* Did someone say AJAX?
+* AJAX Comments
 
 #Complete
 * A nicer UI/UX
@@ -24,6 +24,8 @@ To be a fully functional ruby on rails free alternative to pastebin.com.
 * Email Notification
 * Post Voting
 * Social Media Integration(Facebook, Google, Github login)
+* Private posts
+* AJAX Forms
 
 # How can I help?
 * Issues should be reported
