@@ -28,6 +28,7 @@
       <%= f.collection_select :language, Listing::LANGUAGES.sort, :to_s, :to_s, { prompt: "Select Language"}, { class: "form-control"}%>
     </div>
     <div class="actions modal-footer">
+      <%= f.label :private %>
       <%= f.check_box :private%>
       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       <%= f.submit class: "btn btn-primary"%>
