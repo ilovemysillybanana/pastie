@@ -29,7 +29,7 @@
                 <% if listing.user == (nil) %>
                   <%= link_to 'Anonymous', '#'%>
                 <% else %>
-                   <%= link_to listing.user.username, listing.user%>
+                   <%= link_to listing.user.username, listing.user, remote: true, data: {toggle:"modal", target: "#profile-form"}%>
                 <% end %>
               </td>
 
