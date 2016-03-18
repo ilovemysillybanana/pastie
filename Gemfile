@@ -24,6 +24,7 @@ gem 'omniauth-github'
 gem 'omniauth-google-oauth2'
 gem 'puma'
 gem 'font-awesome-rails'
+gem 'bootstrap-social-rails'
 
 group :development, :test do
   gem 'byebug'
