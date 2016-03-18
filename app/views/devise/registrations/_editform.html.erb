@@ -6,7 +6,7 @@
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= devise_error_messages! %>
     <div class="modal-header">
-      
+
     </div>
     <div class="modal-body">
       <div class="form-group">
@@ -36,12 +36,13 @@
       </div>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      <%= f.submit "Update", class: "btn btn-primary" %>
+
+      <%= f.submit "Update", class: "btn btn-block btn-primary" %>
       <% end %>
-      <p>Unhappy?</p>
-      <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %>
-      <%= link_to "Back", :back %>
+      <h4 class="text-center">Unhappy?</h4>
+      <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-block btn-danger" %>
+      <button type="button" class="btn btn-block btn-default" data-dismiss="modal">Close</button>
+
     </div>
   </div>
 </div>
