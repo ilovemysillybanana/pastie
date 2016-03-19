@@ -6,13 +6,13 @@ To be a fully functional ruby on rails free alternative to pastebin.com.
 
 # Goals
 * Private Messaging System
-* User Reputation System
-* Better User Profile View
 * Comment Replies
 * Comment-Reply Voting
 * AJAX Comments
 
 #Complete
+* User Reputation System
+* Better User Profile View
 * A nicer UI/UX
 * Syntax highlighting
 * Post DB
