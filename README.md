@@ -40,7 +40,7 @@ To be a fully functional ruby on rails free alternative to pastebin.com.
 Dependencies are determined not so much by anything other than what I have currently installed on my own system.
 If for whatever reason, you feel that I have too low of a version of specific software in usage please do submit as an issue along with proof(eg. a link) of why it's not secure/best.
 All gems in the gems file should be the latest unless an issue is found with the newest version.
-* Ruby 2.2.2
+* Ruby 2.3.0
 * Rails 4.2.5
 * Elasticsearch
 * Bootstrap
