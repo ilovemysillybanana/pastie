@@ -5,6 +5,14 @@ Rails.application.routes.draw do
     get '/users/auth/:provider/setup', :to => 'omniauth_callbacks#setup'
   end
   resources :users, :only => [:show]
+
+  resources :user, only: :show do
+    member do
+      put "like" => "users#upvote"
+      put "unlike" => "users#downvote"
+    end
+  end
+
   resources :listings do
     resources :comments do
       member do
