@@ -9,7 +9,8 @@
       <div class="text-center">
         <h3>Reputation</h3>
       </div>
-      <div id="rep-buttons">
+
+      <div id="rep-buttons" class="votes">
       <%= link_to like_user_path(@user), class: "like", method: :put do %>
       <button type="button" class="btn btn-info" aria-label="Left Align">
         <span class="glyphicon glyphicon-chevron-up glyphicon-align-center" aria-hidden="true"></span>
@@ -17,7 +18,7 @@
       </button>
       <% end %>
 
-      <%= link_to unlike_user_path(@user), class: "like", method: :put do %>
+      <%= link_to unlike_user_path(@user), class: "like", method: :put do%>
       <button type="button" class="btn btn-info" aria-label="Left Align">
         <span class="glyphicon glyphicon-chevron-down glyphicon-align-center" aria-hidden="true"></span>
         <span class="badge"><%= @user.get_downvotes.size%></span>

@@ -16,12 +16,20 @@ class UsersController < ApplicationController
 
   def upvote
     @user.upvote_from current_user
-    redirect_to :back
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js { render layout: false }
+      format.json { render json: { count: @user.liked_count } }
+    end
   end
 
   def downvote
     @user.downvote_from current_user
-    redirect_to :back
+    respond_to do |format|
+      format.html {redirect_to :back}
+      format.js { render layout: false }
+      format.json { render json: { count: @user.liked_count } }
+    end
   end
 
   private

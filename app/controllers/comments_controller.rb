@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
       if @comment.save && @comment.valid?
         format.html { redirect_to listing_path(@comment.listing), alert: "Comment Successful."}
         format.js
-        UserNotifier.comment_reply_email(@comment).deliver_later
+        #UserNotifier.comment_reply_email(@comment).deliver_later
       else
         format.html { redirect_to listing_path(@comment.listing), alert: "#{@comment.errors.full_messages}"}
         format.js
