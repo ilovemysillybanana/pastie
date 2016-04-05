@@ -1,33 +1,37 @@
 <% provide(:title, "Sign In") %>
 <div class="modal-dialog" role="document">
   <div class="modal-content">
-    <div class="text-center">
+
+    <div class="text-center modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
       <h2>Log in</h2>
     </div>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="form-group">
+      <div class="form-group modal-body">
         <%= f.label :email %><br />
         <%= f.email_field :email, autofocus: true, class: "form-control" %>
       </div>
 
-      <div class="form-group">
+      <div class="form-group modal-body">
         <%= f.label :password %><br />
         <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+      </br>
+        <%= f.submit "Log in", class: "form-control btn btn-block btn-primary" %>
       </div>
 
       <% if devise_mapping.rememberable? -%>
-        <div class="form-group">
+        <div class="form-group modal-body">
           <%= f.check_box :remember_me %>
           <%= f.label :remember_me %>
         </div>
       <% end -%>
 
-      <div class="form-group">
-        <%= f.submit "Log in", class: "btn btn-block btn-primary" %>
+      <div class="form-group modal-footer">
+        <br>
+        <%= render "devise/shared/links" %>
       </div>
     <% end %>
-
-    <%= render "devise/shared/links" %>
-    <button type="button" class="btn btn-block btn-default" data-dismiss="modal">Close</button>
   </div>
 </div>
