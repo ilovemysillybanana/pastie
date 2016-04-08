@@ -9,6 +9,7 @@ To be a fully functional ruby on rails free alternative to pastebin.com.
 * Comment Replies
 * Comment-Reply Voting
 * AJAX Comments
+* Search AJAX AutoComplete
 
 #Complete
 * User Reputation System
