@@ -18,7 +18,6 @@
 //= require autocomplete-rails
 //= require bootstrap-sprockets
 //= require highlight.pack
-//= require_tree .
 //= require turbolinks
 
 
