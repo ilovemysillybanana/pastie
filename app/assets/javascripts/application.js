@@ -13,14 +13,24 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require jquery-ui
+//= require jquery-ui/autocomplete
+//= require autocomplete-rails
 //= require bootstrap-sprockets
 //= require highlight.pack
+//= require_tree .
 //= require turbolinks
+
+
 
 
 $(document).ready(function() {
   $('pre code').each(function(i, block) {
     hljs.highlightBlock(block);
+  });
+
+  $('.search-query').bind('railsAutocomplete.select', function(event, data {
+  $('.search-me').trigger('click')
   });
 });
 

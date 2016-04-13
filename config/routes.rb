@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   end
 
   resources :listings do
+    get :autocomplete_listing_name, :on => :collection
     resources :comments do
       member do
         put "like" => "comments#upvote"
@@ -28,6 +29,8 @@ Rails.application.routes.draw do
 
     collection do
       get 'search'
+      #get 'autocomplete'
+      #get "/listings/search" => "listings#search_listings"
     end
   end
 

@@ -1,6 +1,8 @@
 class ListingsController < ApplicationController
-  before_action :authenticate_user!, :except => [:search,:show, :index, :create, :new]
+  before_action :authenticate_user!, :except => [:search,:show, :index, :create, :new, :autocomplete_listing_name]
   before_action :set_listing, only: [:show, :edit, :update, :destroy, :downvote, :upvote]
+  autocomplete :listing, :name
+
   respond_to :html, :js
 
   def search
@@ -10,6 +12,7 @@ class ListingsController < ApplicationController
       @listings = Listing.all
     end
   end
+
 
   # GET /listings
   # GET /listings.json

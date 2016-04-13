@@ -1,5 +1,6 @@
 class Listing < ActiveRecord::Base
-  searchkick# autocomplete:['name', 'language', 'user']
+  searchkick
+
 
   belongs_to :user
   has_many :comments
