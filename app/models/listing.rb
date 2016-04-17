@@ -1,5 +1,5 @@
 class Listing < ActiveRecord::Base
-  searchkick
+   searchkick autocomplete: ['name']
 
 
   belongs_to :user
@@ -35,6 +35,15 @@ class Listing < ActiveRecord::Base
     'HTML',
     'Plain Text'
   ]
+
+  def name_tokens
+    return name.split(" ")
+  end
+
+  def self.name_search(query)
+    return Listing.where("LOWER(name) like ? ", "%#{query.downcase}%")
+  end
+
   private
   def randomize_id
     begin

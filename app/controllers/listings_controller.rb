@@ -1,9 +1,8 @@
 class ListingsController < ApplicationController
-  before_action :authenticate_user!, :except => [:search,:show, :index, :create, :new, :autocomplete_listing_name]
+  before_action :authenticate_user!, :except => [:search,:show, :index, :create, :new, :autocomplete]
   before_action :set_listing, only: [:show, :edit, :update, :destroy, :downvote, :upvote]
-  autocomplete :listing, :name
 
-  respond_to :html, :js
+  respond_to :html, :js, :json
 
   def search
     if params[:search]
@@ -13,11 +12,18 @@ class ListingsController < ApplicationController
     end
   end
 
+  def autocomplete
+    render json: Listing.search(params[:search], autocomplete: false, limit: 10).map do |listing|
+      { title: listing.title, value: listing.id }
+    end
+  end
+
 
   # GET /listings
   # GET /listings.json
   def index
     @listings = Listing.all.where(:private => false).paginate(:page => params[:page], :per_page => 25).order(:cached_votes_score => :desc)
+    @listings = Listing.all.where(:private => false).name_search(params[:l]) if params[:l]
   end
 
   # GET /listings/1
