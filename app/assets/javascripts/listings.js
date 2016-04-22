@@ -15,6 +15,3 @@ $(document).ready(function() {
     source: pageListing
   });
 });
-
-$(document).ready(ready);
-$(document).on('page:load', ready);

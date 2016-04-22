@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery.turbolinks
-//= require jquery-ui
+//= require jquery_ujs
 //= require typeahead.bundle
 //= require highlight.pack
 //= require bootstrap-sprockets

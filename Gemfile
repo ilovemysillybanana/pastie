@@ -25,8 +25,7 @@ gem 'omniauth-google-oauth2'
 gem 'puma'
 gem 'font-awesome-rails'
 gem 'bootstrap-social-rails'
-gem 'jquery-ui-rails'
-#gem 'rails-jquery-autocomplete'
+
 
 group :development, :test do
   gem 'byebug'
