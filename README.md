@@ -7,7 +7,7 @@ To be a fully functional ruby on rails free alternative to pastebin.com.
 # Goals
 * Private Messaging System
 * Comment-Reply Voting
-* Search AJAX AutoComplete
+
 
 #Complete
 * User Reputation System
@@ -25,6 +25,7 @@ To be a fully functional ruby on rails free alternative to pastebin.com.
 * Social Media Integration(Facebook, Google, Github login)
 * Private posts
 * AJAX Forms
+* Search AJAX AutoComplete (Complete, but not working on heroku, due to free tier to my understanding. )
 
 # How can I help?
 * Issues should be reported
