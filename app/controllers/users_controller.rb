@@ -36,4 +36,6 @@ class UsersController < ApplicationController
   def set_voting_user
     @user = User.find(params[:id])
   end
+
+
 end

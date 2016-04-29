@@ -1,0 +1,40 @@
+<% if @over_ten %>
+   <%= link_to 'Show Previous', '?m=all' %>
+<% end %>
+
+<% @messages.each do |message| %>
+<% if message.body %>
+<% user = User.find(message.user_id) %>
+<div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="col-md-6">
+              <%= link_to user.username, message.user, remote: true, data: {toggle:"modal", target: "#profile-form"} %>
+              <%= message.message_time %>
+            </div>
+            <div class="col-md-6 text-right">
+            </div>
+          </div>
+        </div>
+      </h4>
+    </div>
+
+    <div class="panel-body">
+      <%= message.body %>
+    </div>
+    <div class="panel-footer"></div>
+  </div>
+</br>
+<% end %>
+<% end %>
+</br>
+
+<%= form_for [@conversation, @message], html: {class: "form-group"} do |f| %>
+    <%= f.text_area :body, class: "form-control" %>
+    <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
+  </br>
+    <%= f.submit "Send", class: "btn btn-primary" %>
+<% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160313064926) do
+ActiveRecord::Schema.define(version: 20160429023734) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
@@ -24,6 +24,13 @@ ActiveRecord::Schema.define(version: 20160313064926) do
   create_table "contacts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "conversations", force: :cascade do |t|
+    t.integer  "sender_id"
+    t.integer  "recipient_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "identities", force: :cascade do |t|
@@ -68,6 +75,18 @@ ActiveRecord::Schema.define(version: 20160313064926) do
   add_index "listings", ["cached_weighted_average"], name: "index_listings_on_cached_weighted_average"
   add_index "listings", ["cached_weighted_score"], name: "index_listings_on_cached_weighted_score"
   add_index "listings", ["cached_weighted_total"], name: "index_listings_on_cached_weighted_total"
+
+  create_table "messages", force: :cascade do |t|
+    t.text     "body"
+    t.integer  "conversation_id"
+    t.integer  "user_id"
+    t.boolean  "read",            default: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+  end
+
+  add_index "messages", ["conversation_id"], name: "index_messages_on_conversation_id"
+  add_index "messages", ["user_id"], name: "index_messages_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

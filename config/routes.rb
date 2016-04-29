@@ -4,8 +4,12 @@ Rails.application.routes.draw do
     get '/users/auth/:provider/upgrade' => 'omniauth_callbacks#upgrade', as: :user_omniauth_upgrade
     get '/users/auth/:provider/setup', :to => 'omniauth_callbacks#setup'
   end
-  resources :users, :only => [:show]
 
+  resources :conversations do
+    resources :messages
+  end
+  
+  resources :users, :only => [:show]
   resources :user, only: :show do
     member do
       put "like" => "users#upvote"
@@ -28,7 +32,7 @@ Rails.application.routes.draw do
 
     collection do
       get 'search'
-      get :autocomplete 
+      get :autocomplete
     end
   end
 
