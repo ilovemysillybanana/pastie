@@ -4,9 +4,11 @@ Our way to post code. Our, inclusive, meaning you. Don't like something? Change 
 # What are we trying to accomplish?
 To be a fully functional ruby on rails free alternative to pastebin.com.
 
-# Goals
-* Private Messaging System
+# Status
+Project is fully functional and complete, if anyone wants to fork or deploy and requires assistance feel free tor each out to me. The project has met all the original goals set, although, not in the most practical ways in some cases, if anyone wants to go through the code for the sake of practice that is fine as well. I'll take any nonbreaking pull requests. I'm going to be moving on to my next project.
 
+# See it live:
+https://rpastie.xyz or https://pastie.herokuapp.com/ to view this app running. I use the free tier of heroku for hosting this app, so if noone's loaded the page in 30 minutes the server goes to sleep and may take up to a minute before loading the page.
 
 #Complete
 * User Reputation System
@@ -24,6 +26,7 @@ To be a fully functional ruby on rails free alternative to pastebin.com.
 * Social Media Integration(Facebook, Google, Github login)
 * Private posts
 * AJAX Forms
+* Private Messaging System
 * Search AJAX AutoComplete (Complete, but not working on heroku, due to free tier to my understanding. )
 
 # How can I help?
